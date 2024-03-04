@@ -2,6 +2,7 @@
 
 \usepackage[danish]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{macros}
 %\usepackage{tgtermes}
 %\usepackage{fouriernc}
 \usepackage[T1]{fontenc}
@@ -35,19 +36,59 @@
                      \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
                      =}
  
-\title{{\large \textsc{Fysik eksamensprojekt}}}
+\title{{\large \textsc{HYDRODYNAMIK\\fysik eksamensprojekt}}}
 \author{Cecilie Horshauge}
 \date{\today}
 
 \begin{document}
 \maketitle
-\section{Research}
+\section{Hypotese}
+\section{Teori}
+\subsection{Strømning i væsker}
+Væskestrømninger opdeles overordnet set i to grupper: Turbulent og laminar strømning.\footnote{Hansen, O. W. 2008}
+En turbulent strømning betyder at strømningen indeholder strømhvirvler, en strømning der ikke har det kaldes laminar.
+Derudover siger vi, at en strømning er stationær, hvis hastigheden af en vilkårlig væskepartikel på et givent sted altid har samme retning og størrelse.
+\myfigure{0.4}{Images/stromning.png}{Strømningslinjer}{Strømning}\\
+På figur \ref{fig:Strømning} ses et rør med indtegnede strømningslinjer i. Der antages om væsken i røret, at den er inkompressibel, 
+dvs. at densiteten \(\rho\) er ens overalt, hvilket gælder for væsker, men ikke for gasser.
+Der er vist to tværsnit, \(A_1\) og \(A_2\), på figuren. På grund af rørets tykkelse vil væsken bevæge sig hurtigere ved \(A_2\) end ved \(A_1\).\\\\
+Der ses på situationen hvor i tidsrummet \(dt\) strømmer væsken afstanden \(ds_1\) ved \(A_1\) gennem røret og ligeledes stykket \(ds_2\) ved \(A_2\).\\
+Betragt nu disse udtryk for væskerumfangene.
+\begin{center}
+    \begin{tabular}{ l c l }
+     \(dV_1=A_1ds_1\) & & \(dV_2=A_2ds_2\)
+    \end{tabular}
+\end{center}
+Derudover er de to rumfang med sikkerhed ens, eftersom væsken er inkompressibel. Vi får da: \(V_1 = V_2\). Strækningen \(ds_1\) og \(ds_2\) kan også defineres ud fra hastigheden og tiden ved:
+\begin{center}
+    \begin{tabular}{ l c l }
+     \(ds_1=v_1dt\) & & \(ds_2=v_2dt\)
+    \end{tabular}
+\end{center}
+Derfor kan vi skrive
+\[A_1v_1dt = A_2v_2dt\]
+\begin{equation}
+    A_1v_1=A_2v_2
+\end{equation}
+\subsection{Bernoullis lov}
+Bernoullis lov beskriver sammenhængen mellem trykket \(p\) i et punkt af væsken med strømningshastigheden \(v\) i punktet. \footnote{Young. H. D. side 406-407}
+\myfigure{0.4}{Images/bernoulli.png}{Visualisering af Bernoullis lov}{Bernoulli}\\
+Betragt figur \ref{fig:Bernoulli} 
+\subsection{Kontinuitetsligningen}
+Massen af en fluid med en konstant strømning ændrer sig ikke. \footnote{Young. H. D. side 404-405}
+Dette leder til et resultat kendt som Kontinuitetsligningen. Betragt to dele af en gennemstrømningsrør med strømning mellem to tværsnit, \(A_1\) og \(A_2\). Kald hastighederne af fluiderne ved tværsnitene for henholdsvis \(v_1\) og \(v_2\).
+Der flyder ikke fluid ud af siderne af strømningsrøret og heller ikke ind af det. 
+\subsection{Forventninger for forsøget}
+\section{Fremgangsmåde}
+
+\section{Resultater}
+\section{Databehandling}
 \subsection{Fluid Dynamics}
 Her er nogle eksempler på fluid dynamics i virkeligheden
 \begin{itemize}
     \item Tornado
     \item Flyvemaskiner, holdt oppe af lufttryk på vingerne
-    \item Væske i vores bræmser
+    \item Væske i vores bremser
     \item Vores krop
 \end{itemize}
 \subsection*{Densitet}
@@ -65,4 +106,8 @@ I fluid mechanics defineres tryk som kraften en væske udfører per areal. SI en
     p=\frac{F}{A}
 \end{equation}
 Tryk er en skalar. I et givent punkt i en væske, er tryk fordelt ens i alle retninger. Det giver derfor ikke mening at tale om en retning. 
+\subsection*{Hydrostatisk ligevægt}
+Hydrostatisk ligevægt eller hydrostatisk balance (eng: Hydrostatic equilibrium) er den tilstand hvor summen af alle kræfter der virker på fluiden er lig 0.\\\\
+Når der er tyngdekraft tilstede [...]
+\subsection*{Pascals lov}
 \end{document}
