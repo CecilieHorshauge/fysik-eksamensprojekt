@@ -61,8 +61,8 @@ Betragt nu disse udtryk for væskerumfangene.
 \end{center}
 Derudover er de to rumfang med sikkerhed ens, eftersom væsken er inkompressibel. Vi får da: \(V_1 = V_2\). Strækningen \(ds_1\) og \(ds_2\) kan også defineres ud fra hastigheden og tiden ved:
 \begin{center}
-    \begin{tabular}{ l c l }
-     \(ds_1=v_1dt\) & & \(ds_2=v_2dt\)
+    \begin{tabular}{ l c c l }
+     \(ds_1=v_1dt\) & & & \(ds_2=v_2dt\)
     \end{tabular}
 \end{center}
 Derfor kan vi skrive
@@ -73,14 +73,71 @@ Derfor kan vi skrive
 \subsection{Bernoullis lov}
 Bernoullis lov beskriver sammenhængen mellem trykket \(p\) i et punkt af væsken med strømningshastigheden \(v\) i punktet. \footnote{Young. H. D. side 406-407}
 \myfigure{0.4}{Images/bernoulli.png}{Visualisering af Bernoullis lov}{Bernoulli}\\
-Betragt figur \ref{fig:Bernoulli} 
+Betragt figur \ref{fig:Bernoulli}. Vi ser igen på situationen hvor der er strømningslinjer i et rør. På tiden \(dt\) strømmer væsken fra \((a)\) til \((b)\) 
+og ligeledes fra \((c)\) til \((d)\). Størrelserne ved forskubningen fra \((a)\) til \((b)\) indekseres med 1 og  forskubningen fra \((c)\) til \((d)\) indekseres med 2.
+Det samlede arbejde udført på væsken kan skrives ved: \(dW=F_1ds_1-F_2ds_2\), da \(F=pA\) fås:
+\begin{equation}
+    \label{eq: 2}
+    dW=p_1A_1ds_1-p_2A_2ds_2=p_1dV_1-p_2dV_2.
+\end{equation}
+Hvis væsken er inkompressibel så gælder der, at \(dV_1=dV_2\).\\
+Under forudsætningen at der kan ses bort fra viskositet (gnidning), der gælder
+\[\text{Udført arbejde} = \text{tilvækst i energi}\]
+\begin{equation}
+    \label{eq: 3}
+    dW=dE_{kin}+dE_{pot}
+\end{equation}
+Eftersom strømningen er stationær er den kinetiske energi for væsken mellem \((b)\) og \((c)\) altid den samme.
+Tilvæksten i den kinetiske energi er af den grund forskellen mellem de kinetiske energier af væsken ved \(V_1\) og \(V_2\).
+\[dE_{kin}=\frac{1}{2}(dm_2)v_2^2-\frac{1}{2}(dm_1)v_1^2\;,\;\;\; \text{hvor } dm_1=dm_2=\rho dV\]
+Derfor kan vi skrive
+\begin{equation}
+    \label{eq: 4}
+    dE_{kin}=\frac{1}{2}\rho v_2^2 dV-\frac{1}{2}\rho v_1^2 dV
+\end{equation}
+Den potentielle energi kan regnes ved \(E_{pot}=mgy\), hvor y betegner afstanden over jorden. Tilvæksten i den potentielle energi kan derfor skrives ved
+\begin{equation}
+    \label{eq: 5}
+    dE_{pot}=(dm_2)gy_2-(dm_1)gy_1 = \rho g y_2 dV-\rho g y_1 dV
+\end{equation}
+Ved indsættelse af ligning \ref{eq: 2}, \ref{eq: 4} og \ref{eq: 5} i ligning \ref{eq: 3} fås:
+\[p_1dV-p_2dV=\underbrace{\;\frac{1}{2}\rho v_2^2dV - \frac{1}{2} \rho v_1^2dV}_{dE_{kin}} + \underbrace{\rho g y_2 dV - \rho g y_1 dV}_{dE_{pot}}\]
+Vi kan nu forkorte \(dV\) væk og omrorkere leddene.
+\[p_1+\frac{1}{2} \rho v_1^2+\rho g y_1 = p_2+\frac{1}{2} \rho v_2^2+\rho gy_2\]
 \subsection{Kontinuitetsligningen}
 Massen af en fluid med en konstant strømning ændrer sig ikke. \footnote{Young. H. D. side 404-405}
 Dette leder til et resultat kendt som Kontinuitetsligningen. Betragt to dele af en gennemstrømningsrør med strømning mellem to tværsnit, \(A_1\) og \(A_2\). Kald hastighederne af fluiderne ved tværsnitene for henholdsvis \(v_1\) og \(v_2\).
 Der flyder ikke fluid ud af siderne af strømningsrøret og heller ikke ind af det. 
-\subsection{Forventninger for forsøget}
 \section{Fremgangsmåde}
 
+\section{Forventninger for forsøget}
+Vi siger at højden \(h\) er afstanden fra vandspejlet til bunden af cylinderen. Væsken har massefylden \(\rho\). Vi kan opskrive situationen med Bernoullis ligning, her udelades leddet med trykket under antagelse at trykket på vandspejlet og i bunden af cylinderen er det samme.
+\begin{equation}
+    \frac{1}{2}\rho v_1^2+\rho g h_1 = \frac{1}{2}\rho v_2^2+\rho g h_2
+\end{equation}
+hvor der gælder at ved \(h=0\) er \(v=0\) og ved dybden \(h\) er hastigheden \(v\).
+Her kan det ses at Bernoullis lov giver det samme som gælder for frit fald i tyngdefeltet.
+\begin{equation}
+    \frac{1}{2}\rho v^2+\rho g (-h)=0 \Leftrightarrow v=\sqrt{2gh}
+\end{equation}
+Hastigheden \(v\) betegner den hastighed væsken løber ud af bunden med. 
+Vi kalder funktionen \(m(t)\) for massen af væsken som funktion af tiden. Vi siger at bundens åbning har tværsnitsarealet \(D\).
+For denne sammenhæng må kontinuitetsligningen gælde hvor \(dm\) er ændringen af væskens masse i tidsrummet \(dt\) som vandet strømmer ud af cylinderen.
+\[\frac{dm}{dt}=-\rho Dv\]
+Hvis vi kalder cylinderens tværsnit for \(A\), så kan massen regnes ved \(m=\rho A h\), hvilket medfører
+\[\frac{dm}{dt}= \rho A \frac{dh}{dt}\]
+Vi kan sætte de to udtryk lig med hinanden, vi får
+\[pA \frac{dh}{dt}=-\rho Dv\]
+hvis der derudover indsættes \(v=\sqrt{2gh}\) fra før, fås følgende differentialligning
+\begin{equation}
+    \rho A \frac{dh}{dt} = -\rho D \sqrt{2gh} \Leftrightarrow \frac{dh}{dt} = -\sqrt{2g}\, \frac{D}{A}\sqrt{h} 
+\end{equation}
+Vi løser differentialligningen ved separation af variable og integration
+\begin{align*}
+    \frac{dh}{\sqrt{h}}&=-\sqrt{2g}\,\frac{D}{A}dt\\
+    \int_{h_0}^{h}\frac{dh}{\sqrt{h}}&=-\sqrt{2g}\,\frac{D}{A} \int_0^t dt\\
+    2\sqrt{h}&=
+\end{align*} 
 \section{Resultater}
 \section{Databehandling}
 \subsection{Fluid Dynamics}
