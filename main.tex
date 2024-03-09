@@ -7,6 +7,7 @@
 %\usepackage{fouriernc}
 \usepackage[T1]{fontenc}
 \usepackage[margin=3cm]{geometry}
+\usepackage{comment}
 
 \usepackage{graphicx}
 \usepackage{amssymb}
@@ -103,7 +104,11 @@ Den potentielle energi kan regnes ved \(E_{pot}=mgy\), hvor y betegner afstanden
 Ved indsættelse af ligning \ref{eq: 2}, \ref{eq: 4} og \ref{eq: 5} i ligning \ref{eq: 3} fås:
 \[p_1dV-p_2dV=\underbrace{\;\frac{1}{2}\rho v_2^2dV - \frac{1}{2} \rho v_1^2dV}_{dE_{kin}} + \underbrace{\rho g y_2 dV - \rho g y_1 dV}_{dE_{pot}}\]
 Vi kan nu forkorte \(dV\) væk og omrorkere leddene.
-\[p_1+\frac{1}{2} \rho v_1^2+\rho g y_1 = p_2+\frac{1}{2} \rho v_2^2+\rho gy_2\]
+\begin{equation}
+    \label{eq: Bernoullis}
+    p_1+\frac{1}{2} \rho v_1^2+\rho g y_1 = p_2+\frac{1}{2} \rho v_2^2+\rho gy_2
+\end{equation}
+Vi har u udledt Bernoullis lov.
 \subsection{Kontinuitetsligningen}
 Massen af en fluid med en konstant strømning ændrer sig ikke. \footnote{Young. H. D. side 404-405}
 Dette leder til et resultat kendt som Kontinuitetsligningen. Betragt to dele af en gennemstrømningsrør med strømning mellem to tværsnit, \(A_1\) og \(A_2\). Kald hastighederne af fluiderne ved tværsnitene for henholdsvis \(v_1\) og \(v_2\).
@@ -136,10 +141,13 @@ Vi løser differentialligningen ved separation af variable og integration
 \begin{align*}
     \frac{dh}{\sqrt{h}}&=-\sqrt{2g}\,\frac{D}{A}dt\\
     \int_{h_0}^{h}\frac{dh}{\sqrt{h}}&=-\sqrt{2g}\,\frac{D}{A} \int_0^t dt\\
-    2\sqrt{h}&=
+    2\sqrt{h}-2\sqrt{h_0}&=-\sqrt{2g}\frac{D}{2A}t\\
+    h&=\left(\sqrt{h_0}-\frac{D\sqrt{2g}}{2A}t\right)^2
 \end{align*} 
+Vi forventer altså at højden som funktion af tiden følger overstående udvikling ved tømning af en beholder.
 \section{Resultater}
 \section{Databehandling}
+\begin{comment}
 \subsection{Fluid Dynamics}
 Her er nogle eksempler på fluid dynamics i virkeligheden
 \begin{itemize}
@@ -167,4 +175,5 @@ Tryk er en skalar. I et givent punkt i en væske, er tryk fordelt ens i alle ret
 Hydrostatisk ligevægt eller hydrostatisk balance (eng: Hydrostatic equilibrium) er den tilstand hvor summen af alle kræfter der virker på fluiden er lig 0.\\\\
 Når der er tyngdekraft tilstede [...]
 \subsection*{Pascals lov}
+\end{comment}
 \end{document}
