@@ -1,0 +1,16 @@
+\babel@toc {danish}{}\relax 
+\contentsline {section}{\numberline {1}Indledning}{3}{}%
+\contentsline {section}{\numberline {2}Formål}{4}{}%
+\contentsline {section}{\numberline {3}Teori}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Strømning i væsker}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Bernoullis lov}{5}{}%
+\contentsline {subsection}{\numberline {3.3}Kontinuitetsligningen}{6}{}%
+\contentsline {section}{\numberline {4}Fremgangsmåde}{6}{}%
+\contentsline {section}{\numberline {5}Forventninger for forsøget}{6}{}%
+\contentsline {section}{\numberline {6}Hypotese}{7}{}%
+\contentsline {section}{\numberline {7}Analyse og resultater}{8}{}%
+\contentsline {section}{\numberline {8}Diskussion}{9}{}%
+\contentsline {section}{\numberline {9}Perspektivering}{10}{}%
+\contentsline {section}{\numberline {10}Konklusion}{10}{}%
+\contentsline {section}{\numberline {11}Litteraturliste}{11}{}%
+\contentsline {section}{\numberline {12}Bilag}{12}{}%

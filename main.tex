@@ -6,27 +6,29 @@
 %\usepackage{tgtermes}
 %\usepackage{fouriernc}
 \usepackage[T1]{fontenc}
-\usepackage[margin=3cm]{geometry}
+\usepackage[margin=2cm]{geometry}
 \usepackage{comment}
 
 \usepackage{graphicx}
 \usepackage{amssymb}
+\usepackage{gensymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{multicol}
 \usepackage{xcolor}
 \usepackage{wrapfig}
 \usepackage{array} %skema
+\usepackage{subfig} %figurer
 
 \usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
 \usepackage{verbatim}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=red,   
-    urlcolor=red,
-}
+%\usepackage{hyperref}
+%\hypersetup{
+%    colorlinks=true,
+%    linkcolor=red,   
+%    urlcolor=red,
+%}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -43,14 +45,30 @@
 
 \begin{document}
 \maketitle
-\section{Hypotese}
+\clearpage
+\tableofcontents
+\clearpage
+\section{Indledning}
+Fysikken bag hydrodynamikken er vigtig for flere grene, heriblandt ingengiørfaget og biologi.
+Det er fysik som denne, der forårsager at flyvemaskiner kan flyve. Viden om emnet er afgørende for at 
+kunne forstå flere biologiske processer og meget mere.\\
+Centralt er det, at viden om hydrodynamik har en bred vifte af anvendelser. 
+Denne viden muliggører teknologiske og sundhedsmæssige fremskridt og derfor relevant i dag!
+I prokjektet vil flere koncepter i hydrodynamikken blive forklaret og disse udnyttes til at udlede 
+en matematisk model for tømning af en beholder. 
+
+\clearpage
+\section{Formål}
+Projektets formål er at stifte bekendtskab med fysikken bag hydrodynamikken. 
+Der vil blive præsenteret nye fagbegreber som \textit{laminar} og \textit{turbulent} strømning mf. 
+Bernoullis lov og Kontinuitetsligningen gennemgås og udnyttes til at forudsige forløbet af vandspejlets højde ved tømning af en beholder.
 \section{Teori}
 \subsection{Strømning i væsker}
 Væskestrømninger opdeles overordnet set i to grupper: Turbulent og laminar strømning.\footnote{Hansen, O. W. 2008}
 En turbulent strømning betyder at strømningen indeholder strømhvirvler, en strømning der ikke har det kaldes laminar.
 Derudover siger vi, at en strømning er stationær, hvis hastigheden af en vilkårlig væskepartikel på et givent sted altid har samme retning og størrelse.
 \myfigure{0.4}{Images/stromning.png}{Strømningslinjer}{Strømning}\\
-På figur \ref{fig:Strømning} ses et rør med indtegnede strømningslinjer i. Der antages om væsken i røret, at den er inkompressibel, 
+På figur \ref*{fig:Strømning} ses et rør med indtegnede strømningslinjer i. Der antages om væsken i røret, at den er inkompressibel, 
 dvs. at densiteten \(\rho\) er ens overalt, hvilket gælder for væsker, men ikke for gasser.
 Der er vist to tværsnit, \(A_1\) og \(A_2\), på figuren. På grund af rørets tykkelse vil væsken bevæge sig hurtigere ved \(A_2\) end ved \(A_1\).\\\\
 Der ses på situationen hvor i tidsrummet \(dt\) strømmer væsken afstanden \(ds_1\) ved \(A_1\) gennem røret og ligeledes stykket \(ds_2\) ved \(A_2\).\\
@@ -73,8 +91,8 @@ Derfor kan vi skrive
 \end{equation}
 \subsection{Bernoullis lov}
 Bernoullis lov beskriver sammenhængen mellem trykket \(p\) i et punkt af væsken med strømningshastigheden \(v\) i punktet. \footnote{Young. H. D. side 406-407}
-\myfigure{0.4}{Images/bernoulli.png}{Visualisering af Bernoullis lov}{Bernoulli}\\
-Betragt figur \ref{fig:Bernoulli}. Vi ser igen på situationen hvor der er strømningslinjer i et rør. På tiden \(dt\) strømmer væsken fra \((a)\) til \((b)\) 
+\myfigure{0.4}{Images/bernoulli.png}{Strømning gennem rør med ændrende tværsnit}{Bernoulli}\\
+Betragt figur \ref*{fig:Bernoulli}. Vi ser igen på situationen hvor der er strømningslinjer i et rør. På tiden \(dt\) strømmer væsken fra \((a)\) til \((b)\) 
 og ligeledes fra \((c)\) til \((d)\). Størrelserne ved forskubningen fra \((a)\) til \((b)\) indekseres med 1 og  forskubningen fra \((c)\) til \((d)\) indekseres med 2.
 Det samlede arbejde udført på væsken kan skrives ved: \(dW=F_1ds_1-F_2ds_2\), da \(F=pA\) fås:
 \begin{equation}
@@ -101,7 +119,7 @@ Den potentielle energi kan regnes ved \(E_{pot}=mgy\), hvor y betegner afstanden
     \label{eq: 5}
     dE_{pot}=(dm_2)gy_2-(dm_1)gy_1 = \rho g y_2 dV-\rho g y_1 dV
 \end{equation}
-Ved indsættelse af ligning \ref{eq: 2}, \ref{eq: 4} og \ref{eq: 5} i ligning \ref{eq: 3} fås:
+Ved indsættelse af ligning \ref*{eq: 2}, \ref*{eq: 4} og \ref*{eq: 5} i ligning \ref{eq: 3} fås:
 \[p_1dV-p_2dV=\underbrace{\;\frac{1}{2}\rho v_2^2dV - \frac{1}{2} \rho v_1^2dV}_{dE_{kin}} + \underbrace{\rho g y_2 dV - \rho g y_1 dV}_{dE_{pot}}\]
 Vi kan nu forkorte \(dV\) væk og omrorkere leddene.
 \begin{equation}
@@ -110,11 +128,23 @@ Vi kan nu forkorte \(dV\) væk og omrorkere leddene.
 \end{equation}
 Vi har u udledt Bernoullis lov.
 \subsection{Kontinuitetsligningen}
-Massen af en fluid med en konstant strømning ændrer sig ikke. \footnote{Young. H. D. side 404-405}
-Dette leder til et resultat kendt som Kontinuitetsligningen. Betragt to dele af en gennemstrømningsrør med strømning mellem to tværsnit, \(A_1\) og \(A_2\). Kald hastighederne af fluiderne ved tværsnitene for henholdsvis \(v_1\) og \(v_2\).
-Der flyder ikke fluid ud af siderne af strømningsrøret og heller ikke ind af det. 
+Massen af en væske med en konstant strømning ændrer sig ikke. \footnote{Young. H. D. side 404-405}
+Dette leder til et resultat kendt som Kontinuitetsligningen. Betragt to dele af en gennemstrømningsrør med strømning mellem to tværsnit, \(A_1\) og \(A_2\).Vi kan igen betragte figur \ref{fig:Bernoulli}.
+Kald hastighederne af væskerne ved tværsnitene for henholdsvis \(v_1\) og \(v_2\).
+Der flyder ikke væske ud af siderne af strømningsrøret og heller ikke ind af det. 
+På den korte tid \(dt\), bevæger væsken ved \(A_1\) sig afstanden \(ds_1=v_1 dt\). En cylinder med højden \(v_1\) og grundfladen \(A_1\) vil have volumen \(dV_1=A_1 v_1 dt\). 
+Dette volumen er hvad der strømmer forbi \(A_1\) i tidsrummet \(dt\). Ligeledes (i samme tidsrum \(dt\)) for en cylinder med volumen \(dV_2=A_2v_2 dt\) strømmer i gennem \(A_2\).\\
+Først antages der at væsken er inkompressibel, dvs. at massefylden er den samme overalt. Massen der passerer gennem \(A_1\) i tiden \(dt\) må være \(dm_1=\rho A_1 v_1 dt\) og det samme gælder for sektion 2: \(dm_2=\rho A_2 v_2 dt\). 
+Under en stationær strømning er massen tilsammen i røret konstant, vi får da \(dm_1=d_2\) og dermed også 
+\[\rho A_1 v_1 dt= \rho A_2 v_2 dt\]
+Og der fås kontinuitetsligningen for en inkompressibel væske
+\begin{equation}
+    A_1 v_1 = A_2 v_2
+\end{equation}
+hvor \(A_1\) og \(A_2\) er tværsnittet af et strømningsrør ved to steder. Desuden er \(v_1\) og \(v_2\) strømningshastigheden ved de to steder. 
 \section{Fremgangsmåde}
-
+En cylinder med et mindre hul i bunden fyldes med vand. Hullet skal dækkes til indtil man har fyldt cylinderen med en tilpasmængde vand - ca. så vandstanden er 80 cm over bunden af cylinderen.
+Man lader vandet løbe ud af bunden og filmer opstillingen lige på. Dataene behandles i LoggerPro. Forsøgsopstillingen kan ses på bilag 1.
 \section{Forventninger for forsøget}
 Vi siger at højden \(h\) er afstanden fra vandspejlet til bunden af cylinderen. Væsken har massefylden \(\rho\). Vi kan opskrive situationen med Bernoullis ligning, her udelades leddet med trykket under antagelse at trykket på vandspejlet og i bunden af cylinderen er det samme.
 \begin{equation}
@@ -145,8 +175,62 @@ Vi løser differentialligningen ved separation af variable og integration
     h&=\left(\sqrt{h_0}-\frac{D\sqrt{2g}}{2A}t\right)^2
 \end{align*} 
 Vi forventer altså at højden som funktion af tiden følger overstående udvikling ved tømning af en beholder.
-\section{Resultater}
-\section{Databehandling}
+\section{Hypotese}
+Der forventes at ved tømning af en beholder med tværsnitsareal A og tværsnitsarealet D af beholderens åbning og begyndelseshøjde \(h_0\). Der vil vandstandens højde \(h\) som funktion af tiden \(t\) følge udviklingen
+\begin{equation}
+    h=\left(\sqrt{h_0}-\frac{D\sqrt{2g}}{2A}t\right)^2
+\end{equation}
+på baggrund af ovenstående teori.
+\clearpage
+\section{Analyse og resultater}
+Forsøget er blevet repeteret af flere omgange. Ved hver figur \((a)\) kan man se dataene plottet sammen med de forventede værdier for hver repetition af forsøget. Ved hver figur \((b)\) ses et residualplot af dataene i henhold til de forventede data.\\
+Her ses graferne for 3 repetitioner af forsøget med et 5 mm i diameter hul i bunden.
+\begin{figure}[!h]%
+    \centering
+    \subfloat[\centering Data plottet sammen med forventning]{{\includegraphics[width=6.8cm]{Images/plot4.png} }}%
+    \quad
+    \subfloat[\centering Residualplot for forsøget]{{\includegraphics[width=8.5cm]{Images/residualPlot4.png} }}%
+    \caption{Resultater for forsøg 1}%
+    \label{fig:resultat1}%
+\end{figure}\\
+\begin{figure}[!h]%
+    \centering
+    \subfloat[\centering Data plottet sammen med forventning]{{\includegraphics[width=6.8cm]{Images/plot5.png} }}%
+    \quad
+    \subfloat[\centering Residualplot for forsøget]{{\includegraphics[width=8.5cm]{Images/residualPlot5.png} }}%
+    \caption{Resultater for forsøg 2}%
+    \label{fig:resultat2}%
+\end{figure}\\
+\begin{figure}[!h]%
+    \centering
+    \subfloat[\centering Data plottet sammen med forventning]{{\includegraphics[width=6.8cm]{Images/plot6.png} }}%
+    \quad
+    \subfloat[\centering Residualplot for forsøget]{{\includegraphics[width=8.5cm]{Images/residualPlot6.png} }}%
+    \caption{Resultater for forsøg 3}%
+    \label{fig:resultat3}%
+\end{figure}
+\newpage
+\section{Diskussion}
+Graferne viser dataene plottet med den forventede tømning af cylinderen. På figur \ref*{fig:resultat1} \((a)\) kan man se at dataene følger den matematiske model meget pænt. 
+Ved \((b)\) kan man se at den beregnede residualspredning for forsøget er udregnet til \(s_1=0.000424\) - altså en temmelig lille spredning. \footnote{Gennemsnitlig kvadratafvigelse}
+Hele datasættet ligger indenfor 2 residualspredninger og \(59.52\%\) ligger inden for 1 spredning. Det vil sige at dataene i forsøg 1 følger modellen temmelig godt.\\\\
+Figur \ref*{fig:resultat2} viser resultatet af forsøg 2, på grafen \((a)\) er ses det at alle datapunkterne ligger for højt. På residualplottet \((b)\) er det klart at en større fejlkilde har spillet ind, residualspredningen er mere end end faktor 10 større end forsøg 1, den ligger på \(s_2=0.0770\), altså markant større.\\
+Der har været en eller flere systematiske fejlkilder. Her må vi huske at den matematiske model er lavet på baggrund af følgende antagelser:
+\begin{enumerate}
+    \item Strømningen er laminar
+    \item Væsken er viskositetsfri
+    \item Væsken er inkompressibel
+\end{enumerate}
+Man kan se på videoen optaget af forsøg 2 at ved forsøgets start skulle cylinderen lige til at tippe, og når også at tippe lidt, i forbindelse med at den rettes op igen vipper vandspejlet op og ned. 
+Det formodes at grunden til forsøg 2 afviger mere end de to andre er pga. denne ændring i strømningen.
+Hvis ændringen i strømningen har forårsaget at strømningen er blevet delvist turbulent fremfor laminar, så er det en selvfølge at observationerne ikke vil følge den laminare model.\\\\
+% 3
+Ved forsøg 3 kan vi se på figur \ref*{fig:resultat3} \((a)\) at dataene tilnærmelsesvist følger udviklingen. Men at der igen er en systematisk fejlkilde. Dette ses klarere ved \((b)\) residualplottet over dataene, her er residualspredningen bestemt til \(s_3=0.0216\), altså en lav residualspredning. 
+I plottet er alle datapunkter indenfor 2 spredningers afvigelse og \(56.93\%\) ligger inden for 1 spredning.\\\\
+% samlet
+Det ser desuden også ud til at der har været en systematisk fejlkilde for både forsøg 1 og 3, dog betydelig mindre end for forsøg 2, og derfor sandsynligvis ikke samme fejlkilde.
+Den afvigelse vi her ser på figur \ref*{fig:resultat1} og \ref*{fig:resultat3} må skyldes vands viskositet. Vi havde oprindeligt antaget at væsken var viskositetsfri, men det er ikke helt sandt. Vand har en meget lav viskositet, men den er der trodsalt.
+Olie eller sirup har for eksempel en betydeligt større viskositet, så vi ville forvente af tømningen af en cylinderfuld af sirup ville tage endnu længere tid. og dermed ville få en meget stor fejlkilde, da modellen under antagelse at væsken er viskositetsfri er den samme.
 \begin{comment}
 \subsection{Fluid Dynamics}
 Her er nogle eksempler på fluid dynamics i virkeligheden
@@ -176,4 +260,39 @@ Hydrostatisk ligevægt eller hydrostatisk balance (eng: Hydrostatic equilibrium)
 Når der er tyngdekraft tilstede [...]
 \subsection*{Pascals lov}
 \end{comment}
+\section{Perspektivering}
+I dette projekt er flere nye begreber og sammenhænge blevet introduceret for at kunne beskrive tømning af en beholder med væske.
+Men disse er også med til forklare mange andre sammenhænge i verden.\\
+Kontinuitetsligningen forklarer f.eks. hvorfor at hælde honning ud ser ud som det gør og forløber sådan.\footnote{Young. H. D. (2020) side 405}
+Når der hældes honning ud af en beholder øges strømningshastigheden i takt med at der hældes. Hastigheden er altså lavere ved beholderens munding end længere nede. 
+Det er også derfor at tværsnitsarealet er større ved mundingen end forneden.\\
+Bernoullis lov kan desuden også forklare hvorfor en giraf med højt blodtryk er sund og rask.\footnote{Ibid. side 407} 
+Som følge af Bernoullis lov må blod der strømmer fra hjertet og op til hjernen have en konstant hastighed. 
+Trykket \(p\) vil falde som blodets højde \(y\) forstørres. For at blodet kan nå fra hjertet til menneskers hjerner med det mindst mulige tryk, tilfører hjertet et maximum på 120 mm Hg (systolisk) tryk. 
+Den lodrette afstand fra hjerte til hjerne er betydeligt større for en giraf, så en girafs hjerte skal altså levere et betydeligt større tryk - ca. 280 mm Hg.\\
+Der er blevet stiftet bekendtskab med laminare strømninger.\footnote{Ibid. side 411} Blodet der strømmer i vores blodårer er en laminar strømning. 
+Men selv små forstyrrelser, eksempelvis hjerteforstyrrelser gøre at blodstrømningen turbulent. 
+Da turbulens larmer, bruges et stetoskop typisk i forbindelse med diagnostisering.\\
+På den måde er kan hydrodynamikken forklare en bred vifte af sammenhænge, disse var kun et par korte nedslag fra virkeligheden.
+\section{Konklusion}
+Vi har set at man ved hjælp af hydrodynamikkens love kan forudsige forløbet af en beholders tømning. 
+Til udledning af forløbet er Bernoullis lov og Kontinuitetsligningen blevet anvendt. Der blev fremstillet en matematisk model 
+for den forventede tømning af beholderen, der er som følger:
+\[h=\left(\sqrt{h_0}-\frac{D\sqrt{2g}}{2A}t\right)^2\]
+Denne udledning er testet ved at tømme en beholder fyldt med vand gentagne og gange. 
+Resultaterne viser at tømningen foregår tilnærmelsesvist efter den bestemte model. 
+Næsten alle målte højder havde en tendens til at være lidt større end forventet. 
+Altså tømningen tog lidt længere tid end forventet. Denne fejlkilde forventes at skyldes vands viskositet, der ikke er taget højde for et i den teoretiske model.\\
+\clearpage
+\section{Litteraturliste}
+\textbf{Primær liste}\\\\
+Hansen, O. W. (2008). \textit{Bernoullis lov Med eksempler fra Hydrodynamik og Aerodynamik}.\\\\
+Young, H. D. \& Freedman, R. A. (2020). \textit{University Physics with Modern Physics}. Pearson.\\\\
+\textbf{Sekundær liste}\\\\
+Hansen, O. W. (2012). \textit{Der er hul i spanden}. LMFK-bladet.\\\\
+Wolfson, R. (2021). \textit{Essential University Physics Volume 1}. Pearson.
+\clearpage
+\section{Bilag}
+\textbf{Bilag 1}\\\\
+\includegraphics[width=0.7 \textwidth]{Images/forsøgsopstilling.png}
 \end{document}
